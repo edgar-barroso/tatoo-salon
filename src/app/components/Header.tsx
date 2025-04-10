@@ -5,18 +5,18 @@ import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
 import { FiMenu, FiX } from "react-icons/fi";
 
+  
+export const links = [
+  "HOME PAGE", 
+  "PORTIFÓLIO", 
+  "ABOUT US",
+  "INQUIRIES", 
+  "PRICINGS", 
+  "CHALLENGES"
+];
 export function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  
-  // Links do menu
-  const links = [
-    "HOME PAGE", 
-    "PORTIFÓLIO", 
-    "ABOUT US",
-    "INQUIRIES", 
-    "PRICINGS", 
-    "CHALLENGES"
-  ];
+
 
   // Animation variants
   const container = {
@@ -96,7 +96,7 @@ export function Header() {
         variants={container}
       >
         <motion.div className="flex items-center justify-center gap-6 text-info uppercase">
-          {links.slice(0, 3).map((link) => (
+          {links.slice(0, links.length/2).map((link) => (
             <motion.div key={link} variants={item}>
               <Link href={"#"}>
                 <motion.span 
@@ -120,7 +120,7 @@ export function Header() {
         </motion.div>
 
         <motion.div className="flex items-center justify-center gap-6 text-info uppercase">
-          {links.slice(3).map((link) => (
+          {links.slice(links.length/2).map((link) => (
             <motion.div key={link} variants={item}>
               <Link href={"#"}>
                 <motion.span 

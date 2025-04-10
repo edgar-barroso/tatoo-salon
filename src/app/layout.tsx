@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import localFont from "next/font/local";
 import { Header } from "./components/Header";
+import { Footer } from "./components/Footer";
 
 const angelRhapsody = localFont({
   src: "./../../public/fonts/angel-rhapsody.woff2",
@@ -30,6 +31,7 @@ export default function RootLayout({
       <body>
         <Header />
         {children}
+        <Footer/>
       </body>
     </html>
   );
